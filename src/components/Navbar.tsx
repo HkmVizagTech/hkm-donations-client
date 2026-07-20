@@ -32,16 +32,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6">
         <a href="#top" className="flex shrink-0 items-center gap-3">
           <img src="/logo.png" alt={org.brandName} className="h-11 w-auto drop-shadow-sm sm:h-14" />
-          <span
-            className={`hidden items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium transition-colors duration-300 md:inline-flex ${
-              scrolled
-                ? 'border-sun-400/50 bg-white/60 text-ink-700'
-                : 'border-ink-900/10 bg-white/50 text-ink-800'
-            }`}
-          >
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sun-600" />
-            {org.temple.darshanBanner}
-          </span>
+
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -112,10 +103,7 @@ export function Navbar() {
             <a href={`mailto:${org.contact.email}`} className="hover:text-sky-700">
               {org.contact.email}
             </a>
-            <span className="flex items-center gap-1.5 text-ink-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-sun-600" />
-              {org.temple.darshanBanner}
-            </span>
+
           </div>
         </nav>
       )}
