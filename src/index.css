@@ -47,10 +47,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   @apply bg-cream-50 text-ink-800 font-sans antialiased;
+  overflow-x: hidden;
 }
 
 ::selection {
