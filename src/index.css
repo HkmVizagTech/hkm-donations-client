@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+
+  /* Palette sourced directly from the client's reference: soft yellow + blues */
+  --color-sun-50: #fffcf3;
+  --color-sun-100: #fef8e3;
+  --color-sun-200: #fbeeb8;
+  --color-sun-300: #f9e8a2;
+  --color-sun-400: #f3d873;
+  --color-sun-500: #e9c04a;
+  --color-sun-600: #cf9f2e;
+  --color-sun-700: #a97c1f;
+
+  --color-sky-50: #f4fafc;
+  --color-sky-100: #e5f3f7;
+  --color-sky-200: #b4e1eb;
+  --color-sky-300: #a0d0de;
+  --color-sky-400: #95bdd7;
+  --color-sky-500: #78a4cb;
+  --color-sky-600: #5f89b2;
+  --color-sky-700: #4a6f95;
+  --color-sky-800: #38567a;
+  --color-sky-900: #293f5c;
+  --color-sky-950: #17263b;
+
+  --color-peach-50: #fef6f1;
+  --color-peach-100: #fce9de;
+  --color-peach-200: #f8d3bf;
+  --color-peach-300: #f0b391;
+
+  --color-cream-50: #fffdf8;
+  --color-cream-100: #fdf9ef;
+  --color-cream-200: #f8f1e0;
+
+  --color-ink-50: #f6f7f8;
+  --color-ink-100: #e9ebee;
+  --color-ink-400: #6b7280;
+  --color-ink-600: #454b54;
+  --color-ink-700: #2c313a;
+  --color-ink-800: #1c1f26;
+  --color-ink-900: #121419;
+  --color-ink-950: #08090c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-50 text-ink-800 font-sans antialiased;
+}
+
+::selection {
+  @apply bg-sun-200 text-ink-900;
+}
+
+.cta-gradient {
+  @apply bg-gradient-to-r from-sun-400 via-sun-500 to-sky-600 text-ink-900;
+}
+
+.cta-gradient:hover {
+  @apply from-sun-500 to-sky-700;
+}
+
+.cta-outline {
+  @apply border-2 border-sun-400 bg-sun-50 text-ink-800;
+}
+
+.cta-outline:hover {
+  @apply bg-sun-100;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-sun-200) 0%, var(--color-cream-50) 45%, var(--color-sky-200) 100%);
+}
+
+.mantra-watermark {
+  position: relative;
+  overflow: hidden;
+}
+
+.mantra-watermark::before {
+  content: 'Hare Krishna Hare Krishna Krishna Krishna Hare Hare \00a0 Hare Rama Hare Rama Rama Rama Hare Hare \00a0 ';
+  position: absolute;
+  inset: -10% -5%;
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--color-sky-600) 7%, transparent);
+  white-space: pre-wrap;
+  word-spacing: 0.4em;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.ticker-scroll {
+  animation: ticker-scroll 18s linear infinite;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
