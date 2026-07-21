@@ -262,7 +262,7 @@ export function AdminCampaigns() {
             <label className="text-sm font-medium text-ink-700">Hero image</label>
             <div className="mt-1 flex items-center gap-3">
               {form.heroImage && (
-                <img src={`${API_URL}${form.heroImage}`} alt="" className="h-14 w-14 rounded-lg object-cover" />
+                <img src={form.heroImage.startsWith('http') ? form.heroImage : `${API_URL}${form.heroImage}`} alt="" className="h-14 w-14 rounded-lg object-cover" />
               )}
               <input type="file" accept="image/*" onChange={handleUpload} className="text-sm" />
               {uploading && <span className="text-xs text-ink-400">Uploading…</span>}
